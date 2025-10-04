@@ -14,6 +14,7 @@ const ProductForm = ({ postProduct, getProducts }) => {
     amount: 0,
     image: "",
     dampingRate: 0.8,
+    storage: "", // storage 추가
   };
 
   const [newProduct, setNewProduct] = useState(initialState);
@@ -53,6 +54,20 @@ const ProductForm = ({ postProduct, getProducts }) => {
                 value={newProduct.price}
                 onChange={(e) =>
                   setNewProduct({ ...newProduct, price: e.target.value })
+                }
+                required
+              />
+            </Form.Group>
+
+            {/* Storage 입력 추가 */}
+            <Form.Group className="mb-4"> 
+              <Form.Label className="text-white">Product Storage</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="0"
+                value={newProduct.storage}
+                onChange={(e) =>
+                  setNewProduct({ ...newProduct, storage: e.target.value })
                 }
                 required
               />
