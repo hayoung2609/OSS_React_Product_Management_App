@@ -12,7 +12,9 @@ const ProductList = () => {
 
   const getProducts = async () => {
     const { data } = await axios.get(url);
-    setProducts(data);
+    // 최신순으로 정리
+    const sortedProducts = data.toSorted((a, b) => Number(b.id) - Number(a.id));
+    setProducts(sortedProducts);
   };
 
   useEffect(() => {

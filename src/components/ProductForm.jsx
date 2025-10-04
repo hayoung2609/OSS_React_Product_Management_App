@@ -10,12 +10,12 @@ const ProductForm = ({ postProduct, getProducts }) => {
 
   const initialState = {
     name: "",
-    price: 0,
-    amount: 0,
+    price: "",
+    amount: "",
     image: "",
     dampingRate: 0.8,
-    storage: "", // storage 추가
-  };
+    storage: "GB" // storage 추가
+  }; // 숫자열도 빈 문자열로 초기화
 
   const [newProduct, setNewProduct] = useState(initialState);
 
@@ -59,20 +59,6 @@ const ProductForm = ({ postProduct, getProducts }) => {
               />
             </Form.Group>
 
-            {/* Storage 입력 추가 */}
-            <Form.Group className="mb-4"> 
-              <Form.Label className="text-white">Product Storage</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="0"
-                value={newProduct.storage}
-                onChange={(e) =>
-                  setNewProduct({ ...newProduct, storage: e.target.value })
-                }
-                required
-              />
-            </Form.Group>
-
             <Form.Group className="mb-4">
               <Form.Label className="text-white">Product Quantity</Form.Label>
               <Form.Control
@@ -89,6 +75,20 @@ const ProductForm = ({ postProduct, getProducts }) => {
               />
             </Form.Group>
 
+            {/* Storage 입력 추가 */}
+            <Form.Group className="mb-4"> 
+              <Form.Label className="text-white">Product Storage</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="0GB"
+                value={newProduct.storage}
+                onChange={(e) =>
+                  setNewProduct({ ...newProduct, storage: e.target.value })
+                }
+                required
+              />
+            </Form.Group>
+
             <Form.Label className="text-white" htmlFor="basic-url">
               Product Image
             </Form.Label>
@@ -99,7 +99,7 @@ const ProductForm = ({ postProduct, getProducts }) => {
               <Form.Control
                 id="basic-url"
                 aria-describedby="basic-addon3"
-                value={newProduct.url}
+                value={newProduct.image}
                 onChange={(e) =>
                   setNewProduct({ ...newProduct, image: e.target.value })
                 }

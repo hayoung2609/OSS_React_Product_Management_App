@@ -15,7 +15,7 @@ const UpdateProduct = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await axios.put(
-      `https://68db330d23ebc87faa323af3.mockapi.io/products${updatedProduct.id}`,
+      `https://68db330d23ebc87faa323af3.mockapi.io/products/${updatedProduct.id}`,
       updatedProduct
     );
     navigate(-1);
@@ -69,6 +69,22 @@ const UpdateProduct = () => {
                     amount: Number(e.target.value),
                   })
                 }
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-4">
+              <Form.Label className="text-white">Product Storage</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="0GB"
+                value={updatedProduct.storage}
+                onChange={(e) =>
+                  setUpdatedProduct({
+                    ...updatedProduct,
+                    storage: e.target.value,
+                  })
+                }
+                required
               />
             </Form.Group>
 

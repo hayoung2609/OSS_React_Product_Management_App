@@ -5,16 +5,12 @@ import { FaGithub } from "react-icons/fa";
 const AboutContainer = () => {
   return (
     <div className={styles.cardContainer}>
-      <h4>Umut Can Gün</h4>
-      <p>Full-Stack Developer</p>
+      <h4>Hayoung Kang</h4>
       <p className="fs-6 w-75 text-center">
-        A driven professional with a passion for learning and a knack for
-        swiftly mastering new domains. With a background in Dentistry and strong
-        foundations in mathematics seamlessly transitioned into software
-        development.
+        Thank you!
       </p>
       <a
-        href="https://github.com/ucangun"
+        href="https://github.com/hayoung2609"
         target="blank"
         className="text-dark fs-3"
       >
